@@ -14,42 +14,18 @@ def user_number_check(user_number):
     global check_result
     check_result = {'bulls': 0, 'cows': 0}
     user_digit_list = str(user_number)
-    if int(user_digit_list[0]) == int(computer_digit_list[0]):
-        check_result['bulls'] += 1
-        check_result['cows'] += 0
-    elif (user_digit_list[0]) in computer_digit_list:
-        check_result['bulls'] += 0
-        check_result['cows'] += 1
-    else:
-        check_result['bulls'] += 0
-        check_result['cows'] += 0
-    if int(user_digit_list[1]) == int(computer_digit_list[1]):
-        check_result['bulls'] += 1
-        check_result['cows'] += 0
-    elif (user_digit_list[1]) in computer_digit_list:
-        check_result['bulls'] += 0
-        check_result['cows'] += 1
-    else:
-        check_result['bulls'] += 0
-        check_result['cows'] += 0
-    if int(user_digit_list[2]) == int(computer_digit_list[2]):
-        check_result['bulls'] += 1
-        check_result['cows'] += 0
-    elif (user_digit_list[2]) in computer_digit_list:
-        check_result['bulls'] += 0
-        check_result['cows'] += 1
-    else:
-        check_result['bulls'] += 0
-        check_result['cows'] += 0
-    if int(user_digit_list[3]) == int(computer_digit_list[3]):
-        check_result['bulls'] += 1
-        check_result['cows'] += 0
-    elif (user_digit_list[3]) in computer_digit_list:
-        check_result['bulls'] += 0
-        check_result['cows'] += 1
-    else:
-        check_result['bulls'] += 0
-        check_result['cows'] += 0
+    x = 0
+    for _ in user_digit_list:
+        if int(user_digit_list[x]) == int(computer_digit_list[x]):
+            check_result['bulls'] += 1
+            check_result['cows'] += 0
+        elif (user_digit_list[x]) in computer_digit_list:
+            check_result['bulls'] += 0
+            check_result['cows'] += 1
+        else:
+            check_result['bulls'] += 0
+            check_result['cows'] += 0
+        x += 1
     print(check_result)
 
 
