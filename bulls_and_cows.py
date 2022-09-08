@@ -10,10 +10,14 @@ def game():
     i = 0
     while True:
         user_guess = input(colored('Enter your guess between 1000 and 9999: ', color='yellow'))
-        if 999 < int(user_guess) < 10000:
-            number_check = user_number_check(user_number=int(user_guess))
-            i += 1
-        else:
+        try:
+            if 999 < int(user_guess) < 10000:
+                number_check = user_number_check(user_number=int(user_guess))
+                i += 1
+            else:
+                cprint('Incorrect! Try again', color='red')
+                continue
+        except ValueError:
             cprint('Incorrect! Try again', color='red')
             continue
         if is_gameover():
